@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script src="../need/mobile_flexible.js"></script>
+    <link href="../need/lib/swiper/swiper-3.4.2.min.css" rel="stylesheet">
+    <link href="../need/css/weRender_mobile.css" rel="stylesheet">
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+    <script src="../need/jquery.min.js"></script>
+    <script src="../need/lib/swiper/swiper-3.4.2.jquery.min.js"></script>
+    <script src="../weRender.js"></script>
+    <script>
+        $(function(){
+
+            $("#demo").weRender({
+                /*
+                * 必填字段   回显模块的类型
+                * */
+                type:"goods_list",
+                /**
+                 * 框架结构相关数据
+                 */
+                frameworkData:{
+                    size:"1",
+                    sizeType:"0"
+                },
+                methods:{
+                    fn1:function(){
+                        this.find("[data-goodBtn]").on("click",function(event){
+                            console.log($(event.target).attr("data-goodId"));
+                        })
+                    },
+                    fn2:function(){
+
+                    }
+                }
+            })
+
+        })
+    </script>
+</html>
+
