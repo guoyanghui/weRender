@@ -1038,3 +1038,41 @@ div[data-weRender] .wr-wrap .wr-tagList .wr-topList-group{
     padding-top: 36px;
 }
 
+/*头部模块*/
+div[data-weRender] .wr-wrap .wr-head{
+    background:#000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    height: 60px;
+}
+
+div[data-weRender] .wr-wrap .wr-head h4{
+    color: #fff;
+    line-height: 60px;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div[data-weRender] .wr-wrap button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+div[data-weRender] .wr-wrap button.wr-head-back{
+    background: url("../img/icon_back.png") no-repeat center;
+    background-size: 50px 50px;
+}
+
+div[data-weRender] .wr-wrap button.wr-head-share{
+    background: url("../img/icon_share.png") no-repeat center;
+    background-size: 24px 24px;
+}

@@ -7,6 +7,9 @@
     <script src="../need/mobile_flexible.js"></script>
     <link href="../need/lib/swiper/swiper-3.4.2.min.css" rel="stylesheet">
     <link href="../need/css/weRender_mobile.css" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 <body>
     <div id="demo"></div>
@@ -18,27 +21,7 @@
         $(function(){
 
             $("#demo").weRender({
-                /*
-                * 必填字段   回显模块的类型
-                * */
-                type:"goods_list",
-                /**
-                 * 框架结构相关数据
-                 */
-                frameworkData:{
-                    size:"1",
-                    sizeType:"0"
-                },
-                methods:{
-                    fn1:function(){
-                        this.find("[data-goodBtn]").on("click",function(event){
-                            console.log($(event.target).attr("data-goodId"));
-                        })
-                    },
-                    fn2:function(){
-
-                    }
-                }
+                type:"head"
             })
 
         })

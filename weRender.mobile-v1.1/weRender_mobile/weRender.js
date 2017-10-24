@@ -8,11 +8,23 @@
 
         },
         methods:{},
+        headerTemp:{
+            frameworkData:{
+                type:"head",
+                title:"页面标题",
+                description:"页面描述",
+                background:"#e0e0e0"
+            },
+            temp:"<div class='wr-wrap'><div class='wr-head'>" +
+            "<button class='wr-head-back'></button>" +
+            "<h4>{title}</h4>" +
+            "<button class='wr-head-share'></button>" +
+            "</div></div>"
+        },
         /*商品*/
         goodsTemp:{
             frameworkData:{
                 type: "goods",  //模版类型
-                goodsNumberType: "2", //显示个数
                 size: "2",    //一级   0,1,2,3
                 sizeType: "0",  //二级 0,1,2,3
                 buyBtn: "T",   //是否有按钮
@@ -803,11 +815,15 @@
         framework:function(){
 
             switch (this.type.toString()){
+                case "head":  //头部
+                    this.changeFramework(this.headerTemp.frameworkData);
+                    this.frameworkData = this.headerTemp.frameworkData;
+                    break;
                 case "goods":   //商品
                     this.changeFramework(this.goodsTemp.frameworkData);
                     this.frameworkData = this.goodsTemp.frameworkData;
                     break;
-                case "tag_list":
+                case "tag_list":  //商品分组
                     this.changeFramework(this.tagListTemp.frameworkData);
                     this.frameworkData = this.tagListTemp.frameworkData;
                     break;
@@ -884,6 +900,11 @@
             var self = this;
             /*判断模版类型*/
             switch (this.frameworkData.type.toString()){
+                case "head":  //头部
+                    this.html(self.renderItem(this.frameworkData,self.headerTemp.temp));
+                    $("body").css("background",this.frameworkData.background);
+                    $("body").attr("title",this.frameworkData.title);
+                    break;
                 case "goods":   //商品
                     this.html(this.goodsListTemp.wrap);
                     self.renderDynamic(".wr-goods-list",self.frameworkData.appPagerModuleGoodList,this.goodsListTemp.itemTemp);
