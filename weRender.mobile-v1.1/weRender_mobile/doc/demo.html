@@ -12,7 +12,8 @@
     </style>
 </head>
 <body>
-    <div id="demo"></div>
+    <div id="demo" style="margin-bottom: 100px"></div>
+    <div id="demo2"></div>
 </body>
     <script src="../need/jquery.min.js"></script>
     <script src="../need/lib/swiper/swiper-3.4.2.jquery.min.js"></script>
@@ -21,7 +22,15 @@
         $(function(){
 
             $("#demo").weRender({
-                type:"head"
+                type:"image_ad",
+                frameworkData:{
+                    swiperTime:5000
+                }
+
+            })
+
+            $("#demo2").weRender({
+                type:"image_ad"
             })
 
         })
