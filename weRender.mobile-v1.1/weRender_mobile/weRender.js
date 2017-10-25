@@ -7,6 +7,7 @@
         frameworkData:{
 
         },
+        flagClose:"F",
         methods:{},
         headerTemp:{
             frameworkData:{
@@ -475,6 +476,7 @@
         imageAdTemp:{
             frameworkData:{
                 type:"image_ad",
+                swiperTime:3000,
                 height:"100px",  //轮播高度
                 showMethod:"1",//1:折叠轮播  2:分开显示
                 showMethodSize:"2",//1:大图  2:小图
@@ -841,7 +843,7 @@
                     break;
                 case "image_ad":    //图片广告
                     this.changeFramework(this.imageAdTemp.frameworkData);
-                    this.frameworkData = this.imageAdTemp.frameworkData;
+                    //this.frameworkData = this.imageAdTemp.frameworkData;
                     break;
                 case "title":    //标题
                     this.changeFramework(this.titleTemp.frameworkData);
@@ -887,13 +889,22 @@
         },
         /*根据传入的frameworkData的值，改变内置frameworkData的值*/
         changeFramework:function(innerArr){
+            /*var self = this;
+            var jsonData = {};
             for(var innerKey in innerArr){
-                for(var outKey in this.frameworkData){
-                    if(innerKey == outKey){
-                        innerArr[innerKey] = this.frameworkData[outKey]
+                for(var outKey in self.frameworkData){
+                    if(outKey != innerKey){
+                        jsonData[innerKey] = innerArr[innerKey]
                     }
                 }
-            }
+            }*/
+
+            var obj = $.extend({},innerArr,this.frameworkData);
+
+            this.frameworkData = obj;
+
+            console.log(this.frameworkData);
+
         },
         /*确认基础模版*/
         activeTemp:function(){
@@ -984,7 +995,7 @@
                             this.adWrap.html(this.renderItem(this.frameworkData,this.imageAdTemp.tempSwiperWrap));
                             self.renderDynamic(".swiper-wrapper",self.frameworkData.appModuleExtraList,self.imageAdTemp.tempSwiperItem);
                             new Swiper(this.find(".swiper-container"),{
-                                autoplay : 3000,
+                                autoplay : self.frameworkData.swiperTime,
                                 loop:true,
                                 pagination : '.swiper-pagination',
                                 effect : 'fade',
@@ -1322,64 +1333,3 @@
         return this;
     }
 },"weRender");
-
-/*
-* frameworkData   相关字段
-*
-* 商品列表：
-* "goodsNumberType": "2", //显示个数
-  "size": "0",    //一级
-  "sizeType": "0",  //二级
-  "buyBtn": "1",   //是否有按钮
-  "buyBtnType": "1",  //按钮类型
-  "showTitlelFlag": "0",  //是否显示商品名称
-  "showDetialFlag": "2",   //是否显示商品描述
-  "showPriceFlag": "1",  //是否显示商品价格
-  "tagGroup": "267364093959684096",  //商品来源
-  "type": "goods_list"  //模版类型
-  "":[]
-
-  搜索框：
-  background:"black",
-  type:"search"
-
-  富文本：
-  type:"rich_text",
-  content:""   //文本内容
-  background:""  //背景颜色
-  fullScreen:""  //是否全屏
-
-  轮播：
-  type:"image_ad"
-  showMethod  1:折叠轮播  2:分开显示
-  showMethodSize 1:大图  2:小图
-  appModuleExtraList:[  数据：
-  {
-    title:
-    linkUrl:
-    imageUrl:
-    imageid:
-    linkType:
-    linkId:
-  }]
-
-  标题:
-  type:"title"
-  title:"",
-  titleTemplate:1 传统样式
-        subTitle:副标题
-        showMethod:"1"  //1.居左  2.居中  3.居右
-        background:""   //背景颜色
-  titleTemplate:2 模仿微信
-        wxTitleDate：""  日期
-        wxTitleAuthor:""作者
-        wxTitleLink：链接标题
-  appModuleExtraList:[{   //链接信息
-        linkName:"",
-        linkUrl:"",
-        linkType:"",
-        linkId:"",
-  }]
-*
-*
-* */
