@@ -222,35 +222,38 @@ div[data-weRender] .wr-wrap .wr-goods-list .list-pic .link .goodInfo-card{
     width: 50%;
     margin-left: 5px;
 }
-div[data-weRender] .wr-wrap .wr-goods-list li .btn{
+
+div[data-weRender] .wr-wrap .wr-goods-list li .btn {
     display: inline-block;
     position: absolute;
     bottom: 4px;
     right: 4px;
-    background-image: url("../img/btn_sprite.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    width: 30px;
+    background:url("../img/cart.png") no-repeat center;
+    background-size: contain;
+    width: 25px;
     height: 25px;
+    border:none;
+    outline: none;
 }
 
-div[data-weRender] .wr-wrap .wr-goods-list li .btn1{
+div[data-weRender] .wr-wrap .wr-goods-list li .btn1 {
+    background:url("../img/go_shopping.png") no-repeat center;
+    background-size: contain;
+    width: 32px;
+    right:-5px;
+}
+
+div[data-weRender] .wr-wrap .wr-goods-list li .btn2 {
+    background:url("../img/icon_plus_green.png") no-repeat center;
     width: 20px;
     height: 20px;
-    background-position: 0 -88px;
+    background-size: contain;
 }
 
-div[data-weRender] .wr-wrap .wr-goods-list li .btn2{
-    width: 40px;
-    height: 25px;
-    background-position: 0 -24px;
-    right: -4px;
-}
-
-div[data-weRender] .wr-wrap .wr-goods-list li .btn3{
-    width: 40px;
-    height: 20px;
-    background-position: 0 -68px;
+div[data-weRender] .wr-wrap .wr-goods-list li .btn3 {
+    background:url("../img/sub_order.png") no-repeat center;
+    background-size: contain;
+    width: 38px;
 }
 
 div[data-weRender] .wr-wrap .wr-goods-list li .goodModel1{
