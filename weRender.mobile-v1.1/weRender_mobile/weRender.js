@@ -1242,6 +1242,9 @@
                     }
                     this.btnJudge();
                     this.modelJudge(this.find("[data-goodModel=\"2\"]"));
+                    this.find("[data-goodModel=\"0\"]").find(".goods-price").removeClass("hide");
+                    this.find("[data-goodModel=\"0\"]").find(".goods-title").removeClass("hide");
+                    this.find("[data-goodModel=\"0\"]").find(".goods-desc").removeClass("hide");
                     break;
             }
 
@@ -1251,19 +1254,20 @@
              /*有按钮*/
              if(this.frameworkData.buyBtn == "T"){
                  this.find("[data-goodBtn]").removeClass("hide");
+                 /*按钮样式*/
+                 switch (this.frameworkData.buyBtnType.toString()){
+                     case "2":
+                         this.find("[data-goodBtn]").addClass("btn1");
+                         break;
+                     case "3":
+                         this.find("[data-goodBtn]").addClass("btn2");
+                         break;
+                     case "4":
+                         this.find("[data-goodBtn]").addClass("btn3");
+                         break;
+                 }
              }
-             /*按钮样式*/
-             switch (this.frameworkData.buyBtnType.toString()){
-                 case "2":
-                     this.find("[data-goodBtn]").addClass("btn1");
-                     break;
-                 case "3":
-                     this.find("[data-goodBtn]").addClass("btn2");
-                     break;
-                 case "4":
-                     this.find("[data-goodBtn]").addClass("btn3");
-                     break;
-             }
+
         },
         /*model逻辑*/
         modelJudge:function(obj){
