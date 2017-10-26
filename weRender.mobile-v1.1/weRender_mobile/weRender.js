@@ -7,7 +7,6 @@
         frameworkData:{
 
         },
-        flagClose:"F",
         methods:{},
         headerTemp:{
             frameworkData:{
@@ -468,9 +467,10 @@
                 content:"编辑富文本的内容",   //文本内容
                 background:"#e0e0e0",  //背景颜色
                 fullScreen:"T",  //是否全屏
+                fontSize:"16px"
             },
             wrap:"<div class='wr-wrap'><div class='wr-richTxt'></div></div>",
-            temp:"<div class='richTxtContent' style=\"background: {background}\">{content}</div>"
+            temp:"<div class='richTxtContent' style=\"background: {background};font-size: {fontSize}\">{content}</div>"
         },
         /*图片广告*/
         imageAdTemp:{
