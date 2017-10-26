@@ -376,17 +376,32 @@ div[data-weRender] .wr-wrap .title-wx .titleWx-body .titleWx-link {
 }
 /*文本导航*/
 div[data-weRender] .wr-wrap .wr-textNav {
-  padding-left: 0.3125rem;
-  padding-right: 0.3125rem;
+
 }
 div[data-weRender] .wr-wrap .wr-textNav li a {
-  display: block;
+  display: flex;
   border-top: 1px solid #dbdbdb;
   font-size: 0.4375rem;
-  line-height: 1.0625rem;
   background: url("../img/arrow.png") no-repeat center right;
   background-size: 0.46875rem;
+  justify-content: flex-start;
+  align-content: center;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
+
+div[data-weRender] .wr-wrap .wr-textNav li a img{
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.2rem;
+}
+
+div[data-weRender] .wr-wrap .wr-textNav li a span {
+  font-size: 14px;
+  height: 1rem;
+  line-height: 1rem;
+}
+
 div[data-weRender] .wr-wrap .wr-textNav li:last-of-type a {
   border-bottom: 1px solid #dbdbdb;
 }
