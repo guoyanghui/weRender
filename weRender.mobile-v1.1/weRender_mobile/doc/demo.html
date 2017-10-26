@@ -12,28 +12,65 @@
     </style>
 </head>
 <body>
-    <div id="demo" style="margin-bottom: 100px"></div>
     <div id="demo2"></div>
+    <div id="demo5"></div>
+    <div id="demo3"></div>
+    <div id="demo"></div>
+    <div id="demo4"></div>
+    <div id="demo6"></div>
+    <div id="demo7"></div>
+    <div id="demo8"></div>
+    <div id="demo9"></div>
+    <div id="demo10"></div>
 </body>
     <script src="../need/jquery.min.js"></script>
     <script src="../need/lib/swiper/swiper-3.4.2.jquery.min.js"></script>
-    <script src="../weRender.js"></script>
+    <script src="../weRender_oo.js"></script>
     <script>
-        $(function(){
+        var goods = new WeRender("#demo","goods",{
+            size:2,
+            sizeType:0,
+            buyBtnType:"1"
+        });
 
-            $("#demo").weRender({
-                type:"image_ad",
-                frameworkData:{
-                    swiperTime:5000
-                }
+        var header = new WeRender("#demo2","header",{
+            title:"测试"
+        })
 
-            })
+        $("#demo2").find(".wr-head-back").on("click",function(){
+            alert(1);
+        })
 
-            $("#demo2").weRender({
-                type:"image_ad"
-            })
+        var search = new WeRender("#demo3","search",{
 
         })
+
+        var richTxt = new WeRender("#demo4","richTxt",{
+
+        })
+
+        var imgAd = new WeRender("#demo5","imgAd",{
+            showMethod:1
+        })
+
+        var textNav = new WeRender("#demo6","textNav",{
+
+        })
+
+        var audio = new WeRender("#demo7","audio",{
+
+        })
+
+        var audio1 = new WeRender("#demo10","audio",{
+            style:1
+        });
+
+        var notice = new WeRender("#demo8","notice",{})
+
+        var activityAd = new WeRender("#demo9","activityAd",{
+
+        })
+
     </script>
 </html>
 
